@@ -1,0 +1,9 @@
+E:\work\AI\lab1\Euristic\Euristic\bin\Debug\Euristic.exe.config
+E:\work\AI\lab1\Euristic\Euristic\bin\Debug\Euristic.exe
+E:\work\AI\lab1\Euristic\Euristic\bin\Debug\Euristic.pdb
+E:\work\AI\lab1\Euristic\Euristic\obj\Debug\Euristic.csprojAssemblyReference.cache
+E:\work\AI\lab1\Euristic\Euristic\obj\Debug\Euristic.MyProg.resources
+E:\work\AI\lab1\Euristic\Euristic\obj\Debug\Euristic.csproj.GenerateResource.cache
+E:\work\AI\lab1\Euristic\Euristic\obj\Debug\Euristic.csproj.CoreCompileInputs.cache
+E:\work\AI\lab1\Euristic\Euristic\obj\Debug\Euristic.exe
+E:\work\AI\lab1\Euristic\Euristic\obj\Debug\Euristic.pdb
