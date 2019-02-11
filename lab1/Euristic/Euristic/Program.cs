@@ -17,6 +17,8 @@ namespace Euristic
         private TextBox textBox2;
         private Label label2;
         private TextBox textBox3;
+        private Button button3;
+        private Button button4;
         private Button button2;
 
         public MyProg()
@@ -34,6 +36,8 @@ namespace Euristic
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +48,7 @@ namespace Euristic
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 75);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(729, 311);
+            this.dataGridView1.Size = new System.Drawing.Size(824, 357);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
             // 
@@ -102,15 +106,36 @@ namespace Euristic
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(12, 392);
+            this.textBox3.Location = new System.Drawing.Point(12, 438);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(729, 55);
+            this.textBox3.Size = new System.Drawing.Size(667, 74);
             this.textBox3.TabIndex = 7;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(685, 438);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(151, 33);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "Зберегти";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(685, 479);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(151, 33);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "Зчитати";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // MyProg
             // 
-            this.ClientSize = new System.Drawing.Size(753, 459);
+            this.ClientSize = new System.Drawing.Size(848, 524);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox2);
@@ -134,7 +159,7 @@ namespace Euristic
             {
                 width = Convert.ToInt32(textBox1.Text);
                 height = Convert.ToInt32(textBox2.Text);
-                if (width < 2 || height < 2 || width > 50 || height > 50)
+                if (width < 2 || height < 2 || width > 500 || height > 500)
                 {
                     throw new Exception();
                 }
@@ -149,12 +174,13 @@ namespace Euristic
             for (i = 0; i < width + 2; i++)
             {
                 dataGridView1.Columns.Add(new DataGridViewTextBoxColumn());
-                dataGridView1.Columns[i].Width = 25;
+                dataGridView1.Columns[i].Width = 5;
                 dataGridView1.Columns[i].ReadOnly = true;
             }
             for (i = 0; i < height + 2; i++)
             {
                 dataGridView1.Rows.Add(new DataGridViewRow());
+                dataGridView1.Rows[i].Height = 5;
             }
             for (i = 0; i < width + 2; i++)
             {
@@ -233,11 +259,53 @@ namespace Euristic
             OpenCells[0].Val = Metric(width-3,height-3);
             OpenCells[0].f = 0;
             List<Cell> ClosedCells = new List<Cell>();
+            Cell Current;
+            Cell Child;
+            DateTime a, b;
+            a = DateTime.Now;
             while (Field[height - 2, width - 2].Ancestor == null)
             {
                 if (OpenCells.Count == 0)
                 {
                     textBox3.Text += "Не існує шляху, що проходить від початку до цілі"+ Environment.NewLine;
+                    ClosedCells = ClosedCells.OrderBy((x)=>x.Val-x.f).ToList();
+                    ///////////
+                    if (ClosedCells[0].x == 1 && ClosedCells[0].y == 1)
+                    {
+                        return;
+                    }
+                    Child = ClosedCells[0];
+                    do
+                    {
+                        Current = Child;
+                        Child = Current.Ancestor;
+                        int dx = Current.x - Child.x;
+                        int dy = Current.y - Child.y;
+                        if (dx != 0)
+                        {
+                            if (dx > 0)
+                            {
+                                dataGridView1.Rows[Child.y].Cells[Child.x].Value = "→";
+                            }
+                            else
+                            {
+                                dataGridView1.Rows[Child.y].Cells[Child.x].Value = "←";
+                            }
+                        }
+                        else
+                        {
+                            if (dy > 0)
+                            {
+                                dataGridView1.Rows[Child.y].Cells[Child.x].Value = "↓";
+                            }
+                            else
+                            {
+                                dataGridView1.Rows[Child.y].Cells[Child.x].Value = "↑";
+                            }
+                        }
+                    }
+                    while (!((Child.x == Field[1, 1].x) && (Child.y == Field[1, 1].y)));
+                    ///////////
                     return;
                 }
                 OpenCells = OpenCells.OrderBy((x)=>x.Val).ToList();
@@ -279,8 +347,8 @@ namespace Euristic
                 ClosedCells.Add(OpenCells[0]);
                 OpenCells.RemoveAt(0);
             }
-            Cell Current;
-            Cell Child = Field[height - 2, width - 2];
+            textBox3.Text += "Час виконання -  " + (DateTime.Now - a).TotalSeconds + " секунд" + Environment.NewLine;
+            Child = Field[height - 2, width - 2];
             do
             {
                 Current = Child;
@@ -367,6 +435,11 @@ namespace Euristic
                     }
                 }
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

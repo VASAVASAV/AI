@@ -11,7 +11,7 @@ namespace Euristic
         public List<Cell> NeighBors;
         public Cell Ancestor = null;
         public double Val;
-        public double f;
+        public double f;  
         public int x, y;
         public double Cost;
         public Cell(int NewX, int NewY)
