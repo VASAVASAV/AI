@@ -174,13 +174,13 @@ namespace Euristic
             for (i = 0; i < width + 2; i++)
             {
                 dataGridView1.Columns.Add(new DataGridViewTextBoxColumn());
-                dataGridView1.Columns[i].Width = 5;
+                dataGridView1.Columns[i].Width = 20;
                 dataGridView1.Columns[i].ReadOnly = true;
             }
             for (i = 0; i < height + 2; i++)
             {
                 dataGridView1.Rows.Add(new DataGridViewRow());
-                dataGridView1.Rows[i].Height = 5;
+                dataGridView1.Rows[i].Height = 20;
             }
             for (i = 0; i < width + 2; i++)
             {
