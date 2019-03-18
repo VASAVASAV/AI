@@ -8,10 +8,10 @@ namespace _3lab
 {
     class Artist
     {
-        string Name;
+        public string Name { get; }
 
         City Hometown;
-        DateTime DateOfBirth;
+        int  DateOfBirth;
         List<Masterpiece> ArtWorks = new List<Masterpiece>();
 
         public Artist(string HisName)
@@ -19,7 +19,7 @@ namespace _3lab
             Name = HisName;
         }
 
-        public Artist(string HisName, City BirthPlace, DateTime BirthTime)
+        public Artist(string HisName, City BirthPlace, int  BirthTime)
         {
             Name = HisName;
             Hometown = BirthPlace;

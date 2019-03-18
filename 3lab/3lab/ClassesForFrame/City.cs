@@ -8,9 +8,9 @@ namespace _3lab
 {
     class City
     {
-        string CityName;
+        public string CityName { get; }
 
-        DateTime FoundationTime;
+        public int  FoundationTime;
         List<Artist> ArtistCitizens = new List<Artist>();
         List<Masterpiece> ArtworksStored = new List<Masterpiece>();
 
@@ -19,9 +19,14 @@ namespace _3lab
             CityName = ItsName;
         }
 
-        public City(string ItsName, DateTime FoundatDate)
+        public City(string ItsName, int  FoundatDate)
         {
             CityName = ItsName;
+            FoundationTime = FoundatDate;
+        }
+
+        public void SetFoundationTime(int  FoundatDate)
+        {
             FoundationTime = FoundatDate;
         }
     }

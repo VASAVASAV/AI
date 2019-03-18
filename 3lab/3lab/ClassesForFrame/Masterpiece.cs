@@ -8,11 +8,11 @@ namespace _3lab
 {
     class Masterpiece
     {
-        string Title;
+        public string Title { get; }
 
         Artist Author;
         City Storage;
-        DateTime CreationDate;
+        int  CreationDate;
 
         public Masterpiece(string ItsTitle, City StoragePlace)
         {
@@ -20,7 +20,7 @@ namespace _3lab
             Storage = StoragePlace;
         }
 
-        public Masterpiece(string ItsTitle, City StoragePlace, Artist ItsAuthor, DateTime DateOfCreation)
+        public Masterpiece(string ItsTitle, City StoragePlace, Artist ItsAuthor, int  DateOfCreation)
         {
             Title = ItsTitle;
             Storage = StoragePlace;
