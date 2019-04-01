@@ -59,6 +59,7 @@ namespace _3lab
             {
                 Artist NewArt = new Artist(ArtistName, GetCityByName(CityName), BirthTime);
                 Authors.Add(NewArt);
+                Cities.Find(x => x == GetCityByName(CityName)).AddArtist(NewArt);
             }
         }
 

@@ -29,5 +29,10 @@ namespace _3lab
         {
             FoundationTime = FoundatDate;
         }
+
+        public void AddArtist(Artist NewBorn)
+        {
+            ArtistCitizens.Add(NewBorn);
+        }
     }
 }
