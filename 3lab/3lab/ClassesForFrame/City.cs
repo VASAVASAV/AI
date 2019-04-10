@@ -34,5 +34,30 @@ namespace _3lab
         {
             ArtistCitizens.Add(NewBorn);
         }
+
+        public void AddArtWork (Masterpiece NewPiece)
+        {
+            ArtworksStored.Add(NewPiece);
+        }
+
+        public List<string> GetHabitansAsString()
+        {
+            List<string> result = new List<string>();
+            for (int i = 0; i < ArtistCitizens.Count; i++)
+            {
+                result.Add(ArtistCitizens[i].Name);
+            }
+            return result;
+        }
+
+        public List<string> GetArtworksAsString()
+        {
+            List<string> result = new List<string>();
+            for (int i = 0; i < ArtworksStored.Count; i++)
+            {
+                result.Add(ArtworksStored[i].Title);
+            }
+            return result;
+        }
     }
 }

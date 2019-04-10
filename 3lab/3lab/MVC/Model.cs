@@ -63,21 +63,33 @@ namespace _3lab
             }
         }
 
-        public void AddMasterpiece(string PieceName)
+        public void AddMasterpiece(string PieceName, string CityName, string AuthorName, int Date)
         {
             if (PieceName != null && !MasterpiecesContains(PieceName))
             {
-                //Masterpiece NewPiece = new Masterpiece(PieceName);
-               // Artworks.Add(NewPiece);
+                Masterpiece NewPiece = new Masterpiece(PieceName, GetCityByName(CityName), GetAuthorByName(AuthorName),Date);
+                Artworks.Add(NewPiece);
+                Cities.Find(x => x == GetCityByName(CityName)).AddArtWork(NewPiece);
+                Authors.Find(x => x == GetAuthorByName(AuthorName)).AddArtWork(NewPiece);
             }
         }
 
-        City GetCityByName(string Name)
+        public City GetCityByName(string Name)
         {
             for (int i = 0; i < Cities.Count; i++)
             {
                 if (Cities[i].CityName == Name)
                     return Cities[i];
+            }
+            return null;
+        }
+
+        public Artist GetAuthorByName(string Name)
+        {
+            for (int i = 0; i < Authors.Count; i++)
+            {
+                if (Authors[i].Name == Name)
+                    return Authors[i];
             }
             return null;
         }

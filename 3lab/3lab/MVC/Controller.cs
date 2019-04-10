@@ -10,8 +10,8 @@ namespace _3lab
     {
         MainForm MyForm;
         Model MyModel;
-        public string[] CitiesArr = new string[] { "Невідомо"};
-        public string[] AuthorsArr = new string[] { "Невідомый" };
+        public string[] CitiesArr = new string[0];//{ "Невідомо"};
+        public string[] AuthorsArr = new string[0]; //{ "Невідомый" };
         public string[] MasterpiecesArr = new string[0];
         public Controller(MainForm InpForm, Model InpModel)
         {
@@ -19,6 +19,8 @@ namespace _3lab
             MyModel = InpModel;
             MyModel.MyCont = this;
             MyForm.MyCont = this;
+            FoundCity("Невідомо", -1);
+            BirthOfMan("Невідомий", "Невідомо",-1);
         }
 
         public void FoundCity(string Name, int Date)
@@ -32,19 +34,29 @@ namespace _3lab
 
         public void BirthOfMan(string Name, string City, int Date)
         {
+            if (Date < MyModel.GetCityByName(City).FoundationTime)
+            {
+                MyForm.ShowMessage("This man couldnt be born before city was founded. Operation interrupted");
+                return;
+            }
             MyModel.AddAuthor(Name, City, Date);
             MyForm.AddAuthorName(Name);
         }
 
-        public void CreationOfMasterpiece(string Name)
+        public void CreationOfMasterpiece(string Name, string City, string Author, int Date)
         {
-            //MyModel.AddCity(Name);
+            MyModel.AddMasterpiece(Name, City, Author, Date);
             MyForm.AddCityName(Name);
         }
 
-        public Tuple<string,string, int> GetCityInf(string CityName)
+        public Tuple<List<string>,List<string>, int> GetCityInf(string CityName)
         {
-            return null; 
+            List<string> Artworks = new List<string>();
+            List<string> People = new List<string>();
+            City Target = MyModel.GetCityByName(CityName);
+            People = Target.GetHabitansAsString();
+            Artworks = Target.GetArtworksAsString();
+            return new Tuple<List<string>,List<string>,int>(People,Artworks,Target.FoundationTime);
         }
     }
 }
