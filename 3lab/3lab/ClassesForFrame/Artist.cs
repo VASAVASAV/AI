@@ -25,5 +25,10 @@ namespace _3lab
             Hometown = BirthPlace;
             DateOfBirth = BirthTime;
         }
+
+        public void AddArtWork(Masterpiece NewPiece)
+        {
+            ArtWorks.Add(NewPiece);
+        }
     }
 }

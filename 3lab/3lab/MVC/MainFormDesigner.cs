@@ -31,7 +31,6 @@ namespace _3lab
         private TextBox textBox3;
         private Label label7;
         private Label label8;
-        private ComboBox comboBox6;
         private Label label9;
         private ComboBox comboBox7;
         private Label label2;
@@ -46,7 +45,6 @@ namespace _3lab
         private Label label11;
         private ComboBox comboBox8;
         private Label label12;
-        private ComboBox comboBox9;
         private Button button9;
         private Button button10;
         private Button button8;
@@ -54,53 +52,57 @@ namespace _3lab
         private ComboBox comboBox4;
         private Button button11;
         private Button button12;
+        private Label label13;
+        private TextBox textBox5;
+        private TextBox textBox6;
         private GroupBox groupBox1;
 
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.comboBox8 = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -144,6 +146,42 @@ namespace _3lab
             this.tabPage1.Text = "Міста";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(415, 198);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(92, 23);
+            this.button9.TabIndex = 14;
+            this.button9.Text = "Видалити";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(314, 198);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(92, 23);
+            this.button10.TabIndex = 13;
+            this.button10.Text = "Додати";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(110, 198);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(92, 23);
+            this.button8.TabIndex = 12;
+            this.button8.Text = "Видалити";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(9, 198);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(92, 23);
+            this.button7.TabIndex = 11;
+            this.button7.Text = "Додати";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(510, 426);
@@ -155,6 +193,7 @@ namespace _3lab
             // 
             // textBox2
             // 
+            this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(706, 154);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
@@ -195,6 +234,14 @@ namespace _3lab
             this.label4.TabIndex = 5;
             this.label4.Text = "Народилися:";
             // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(81, 154);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(121, 21);
+            this.comboBox4.TabIndex = 4;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -211,7 +258,7 @@ namespace _3lab
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 21);
             this.comboBox3.TabIndex = 2;
-            this.comboBox3.TextUpdate += new System.EventHandler(this.comboBox3_TextUpdate);
+            this.comboBox3.TextChanged += new System.EventHandler(this.comboBox3_TextChanged);
             // 
             // button1
             // 
@@ -219,19 +266,19 @@ namespace _3lab
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(166, 57);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Додати місто";
+            this.button1.Text = "Заснувати місто";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.textBox6);
             this.tabPage2.Controls.Add(this.button11);
             this.tabPage2.Controls.Add(this.button12);
             this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.textBox3);
             this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.comboBox6);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.comboBox7);
             this.tabPage2.Controls.Add(this.label2);
@@ -245,6 +292,24 @@ namespace _3lab
             this.tabPage2.Text = "Автори";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(116, 231);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(92, 23);
+            this.button11.TabIndex = 18;
+            this.button11.Text = "Видалити";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(15, 231);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(92, 23);
+            this.button12.TabIndex = 17;
+            this.button12.Text = "Додати";
+            this.button12.UseVisualStyleBackColor = true;
+            // 
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(510, 426);
@@ -256,6 +321,7 @@ namespace _3lab
             // 
             // textBox3
             // 
+            this.textBox3.Enabled = false;
             this.textBox3.Location = new System.Drawing.Point(706, 203);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
@@ -278,14 +344,6 @@ namespace _3lab
             this.label8.Size = new System.Drawing.Size(101, 13);
             this.label8.TabIndex = 13;
             this.label8.Text = "Місце народження";
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(414, 203);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(121, 21);
-            this.comboBox6.TabIndex = 12;
             // 
             // label9
             // 
@@ -333,13 +391,14 @@ namespace _3lab
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label13);
+            this.tabPage3.Controls.Add(this.textBox5);
             this.tabPage3.Controls.Add(this.button4);
             this.tabPage3.Controls.Add(this.textBox4);
             this.tabPage3.Controls.Add(this.label10);
             this.tabPage3.Controls.Add(this.label11);
             this.tabPage3.Controls.Add(this.comboBox8);
             this.tabPage3.Controls.Add(this.label12);
-            this.tabPage3.Controls.Add(this.comboBox9);
             this.tabPage3.Controls.Add(this.label3);
             this.tabPage3.Controls.Add(this.comboBox1);
             this.tabPage3.Controls.Add(this.button3);
@@ -349,6 +408,23 @@ namespace _3lab
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Шедеври";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(808, 236);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(27, 13);
+            this.label13.TabIndex = 24;
+            this.label13.Text = "році";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Enabled = false;
+            this.textBox5.Location = new System.Drawing.Point(120, 234);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(100, 20);
+            this.textBox5.TabIndex = 23;
             // 
             // button4
             // 
@@ -361,7 +437,8 @@ namespace _3lab
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(724, 233);
+            this.textBox4.Enabled = false;
+            this.textBox4.Location = new System.Drawing.Point(702, 233);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 21;
@@ -369,11 +446,11 @@ namespace _3lab
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(638, 236);
+            this.label10.Location = new System.Drawing.Point(608, 236);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(80, 13);
+            this.label10.Size = new System.Drawing.Size(88, 13);
             this.label10.TabIndex = 20;
-            this.label10.Text = "був створений";
+            this.label10.Text = "був створений у";
             // 
             // label11
             // 
@@ -400,14 +477,6 @@ namespace _3lab
             this.label12.Size = new System.Drawing.Size(84, 13);
             this.label12.TabIndex = 17;
             this.label12.Text = "Створений ким";
-            // 
-            // comboBox9
-            // 
-            this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Location = new System.Drawing.Point(120, 234);
-            this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(121, 21);
-            this.comboBox9.TabIndex = 16;
             // 
             // label3
             // 
@@ -442,7 +511,7 @@ namespace _3lab
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(854, 489);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Питання";
+            this.tabPage4.Text = "Запити";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // textBox1
@@ -463,67 +532,13 @@ namespace _3lab
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Журнал";
             // 
-            // comboBox4
+            // textBox6
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(81, 154);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 4;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(9, 198);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(92, 23);
-            this.button7.TabIndex = 11;
-            this.button7.Text = "Додати";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(110, 198);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(92, 23);
-            this.button8.TabIndex = 12;
-            this.button8.Text = "Видалити";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(415, 198);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(92, 23);
-            this.button9.TabIndex = 14;
-            this.button9.Text = "Видалити";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(314, 198);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(92, 23);
-            this.button10.TabIndex = 13;
-            this.button10.Text = "Додати";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(116, 231);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(92, 23);
-            this.button11.TabIndex = 18;
-            this.button11.Text = "Видалити";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(15, 231);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(92, 23);
-            this.button12.TabIndex = 17;
-            this.button12.Text = "Додати";
-            this.button12.UseVisualStyleBackColor = true;
+            this.textBox6.Enabled = false;
+            this.textBox6.Location = new System.Drawing.Point(414, 205);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(100, 20);
+            this.textBox6.TabIndex = 19;
             // 
             // MainForm
             // 
@@ -542,16 +557,6 @@ namespace _3lab
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
-        }
-
-        private void comboBox3_TextUpdate(object sender, EventArgs e)
-        {
-            if (!comboBox3.Items.Contains(comboBox3.Text))
-            {
-                comboBox3.Text = "";
-                return;
-            }
-            MyCont.GetCityInf(comboBox3.Text);
         }
     }
 }
