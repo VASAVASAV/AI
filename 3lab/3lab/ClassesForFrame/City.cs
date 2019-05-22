@@ -11,8 +11,8 @@ namespace _3lab
         public string CityName { get; }
 
         public int  FoundationTime;
-        List<Artist> ArtistCitizens = new List<Artist>();
-        List<Masterpiece> ArtworksStored = new List<Masterpiece>();
+        public List<Artist> ArtistCitizens = new List<Artist>();
+        public List<Masterpiece> ArtworksStored = new List<Masterpiece>();
 
         public City(string ItsName)
         {

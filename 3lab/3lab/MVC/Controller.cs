@@ -8,10 +8,10 @@ namespace _3lab
 {
     class Controller
     {
-        MainForm MyForm;
-        Model MyModel;
+        public  MainForm MyForm;
+        public Model MyModel;
         public string[] CitiesArr = new string[0];//{ "Невідомо"};
-        public string[] AuthorsArr = new string[0]; //{ "Невідомый" };
+        public string[] AuthorsArr = new string[0];// { "Невідомий" };
         public string[] MasterpiecesArr = new string[0];
         public Controller(MainForm InpForm, Model InpModel)
         {
@@ -20,7 +20,27 @@ namespace _3lab
             MyModel.MyCont = this;
             MyForm.MyCont = this;
             FoundCity("Невідомо", -1);
+            FoundCity("Лейден", 922);
+            FoundCity("Санкт-Петербург", 1703);
+            FoundCity("Ареццо", -600);
+            FoundCity("Париж", -300);
+            FoundCity("Амстердам", 1275);
+            FoundCity("Нью-Йорк", 1624);
+            FoundCity("Рим", -800);
+            BirthOfMan("Мікеланджело", "Ареццо", 1475);
+            BirthOfMan("Карл Брюлов", "Санкт-Петербург", 1799);
+            BirthOfMan("Рембрандт", "Лейден", 1606);
+            BirthOfMan("Жак-Луі Давид", "Париж", 1748);
             BirthOfMan("Невідомий", "Невідомо",-1);
+            CreationOfMasterpiece("Розпис Сікстинської капели", "Рим", "Мікеланджело", 1508);
+            CreationOfMasterpiece("Нічна варта", "Амстердам", "Рембрандт", 1642);
+            CreationOfMasterpiece("Бонопарт на перевалі Сен-Бернар", "Париж", "Жак-Луі Давид", 1801);
+            CreationOfMasterpiece("Смерть Сократа", "Нью-Йорк", "Жак-Луі Давид", 1787);
+            CreationOfMasterpiece("Останній день Помпеї", "Санкт-Петербург", "Карл Брюлов", 1830);
+            CreationOfMasterpiece("Клятва Гораціїв", "Париж", "Жак-Луі Давид", 1784);
+            CreationOfMasterpiece("Август з Пріма-Порта", "Рим", "Невідомий", 50);
+            CreationOfMasterpiece("Пьета", "Рим", "Мікеланджело", 1499);
+            CreationOfMasterpiece("Повернення блудного сина", "Санкт-Петербург", "Рембрандт", 1499);
         }
 
         public void FoundCity(string Name, int Date)
@@ -41,12 +61,18 @@ namespace _3lab
             }
             MyModel.AddAuthor(Name, City, Date);
             MyForm.AddAuthorName(Name);
+            var temp = (AuthorsArr.ToList());
+            temp.Add(Name);
+            AuthorsArr = temp.ToArray();
         }
 
         public void CreationOfMasterpiece(string Name, string City, string Author, int Date)
         {
             MyModel.AddMasterpiece(Name, City, Author, Date);
-            MyForm.AddCityName(Name);
+            MyForm.AddPieceName(Name);
+            var temp = (MasterpiecesArr.ToList());
+            temp.Add(Name);
+            MasterpiecesArr = temp.ToArray();
         }
 
         public Tuple<List<string>,List<string>, int> GetCityInf(string CityName)
@@ -57,6 +83,22 @@ namespace _3lab
             People = Target.GetHabitansAsString();
             Artworks = Target.GetArtworksAsString();
             return new Tuple<List<string>,List<string>,int>(People,Artworks,Target.FoundationTime);
+        }
+
+        public Tuple<List<string>, string, int> GetAuthorInf(string AuthorName)
+        {
+            List<string> Artworks = new List<string>();
+            Artist Target = MyModel.GetAuthorByName(AuthorName);
+            string BirthPlace = Target.GetBirthPlace();
+            Artworks = Target.GetArtworksAsString();
+            return new Tuple<List<string>, string, int>(Artworks, BirthPlace, Target.DateOfBirth);
+        }
+
+        public Tuple<string, string, int> GetPieceInf(string PieceName)
+        {
+            Masterpiece Target = MyModel.GetPieceByName(PieceName);
+            string CreationPlace = Target.GetCreationPlace();
+            return new Tuple<string, string, int>(Target.GetAuthor(), CreationPlace, Target.CreationDate);
         }
     }
 }

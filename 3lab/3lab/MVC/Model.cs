@@ -10,9 +10,9 @@ namespace _3lab
     {
         public Controller MyCont;
 
-        List<City> Cities = new List<City>();
-        List<Artist> Authors = new List<Artist>();
-        List<Masterpiece> Artworks = new List<Masterpiece>();
+        public List<City> Cities = new List<City>();
+        public List<Artist> Authors = new List<Artist>();
+        public List<Masterpiece> Artworks = new List<Masterpiece>();
 
         bool CitiesContains(string Name)
         {
@@ -90,6 +90,16 @@ namespace _3lab
             {
                 if (Authors[i].Name == Name)
                     return Authors[i];
+            }
+            return null;
+        }
+
+        public Masterpiece GetPieceByName(string Name)
+        {
+            for (int i = 0; i < Artworks.Count; i++)
+            {
+                if (Artworks[i].Title == Name)
+                    return Artworks[i];
             }
             return null;
         }

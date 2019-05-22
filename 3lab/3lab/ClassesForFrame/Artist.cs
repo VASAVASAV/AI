@@ -10,9 +10,9 @@ namespace _3lab
     {
         public string Name { get; }
 
-        City Hometown;
-        int  DateOfBirth;
-        List<Masterpiece> ArtWorks = new List<Masterpiece>();
+        public City Hometown;
+        public int  DateOfBirth;
+        public List<Masterpiece> ArtWorks = new List<Masterpiece>();
 
         public Artist(string HisName)
         {
@@ -29,6 +29,21 @@ namespace _3lab
         public void AddArtWork(Masterpiece NewPiece)
         {
             ArtWorks.Add(NewPiece);
+        }
+
+        public string GetBirthPlace()
+        {
+            return Hometown.CityName;
+        }
+
+        public List<string> GetArtworksAsString()
+        {
+            List<string> result = new List<string>();
+            for (int i = 0; i < ArtWorks.Count; i++)
+            {
+                result.Add(ArtWorks[i].Title);
+            }
+            return result;
         }
     }
 }

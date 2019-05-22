@@ -1,0 +1,13 @@
+F:\work\AI\3lab\3lab\bin\Debug\3lab.exe.config
+F:\work\AI\3lab\3lab\bin\Debug\3lab.exe
+F:\work\AI\3lab\3lab\bin\Debug\3lab.pdb
+F:\work\AI\3lab\3lab\bin\Debug\args.dll
+F:\work\AI\3lab\3lab\bin\Debug\Logger.cs.dll
+F:\work\AI\3lab\3lab\bin\Debug\wnd.dll
+F:\work\AI\3lab\3lab\obj\Debug\3lab.csprojAssemblyReference.cache
+F:\work\AI\3lab\3lab\obj\Debug\_3lab.MainForm.resources
+F:\work\AI\3lab\3lab\obj\Debug\3lab.csproj.GenerateResource.cache
+F:\work\AI\3lab\3lab\obj\Debug\3lab.csproj.CoreCompileInputs.cache
+F:\work\AI\3lab\3lab\obj\Debug\3lab.csproj.CopyComplete
+F:\work\AI\3lab\3lab\obj\Debug\3lab.exe
+F:\work\AI\3lab\3lab\obj\Debug\3lab.pdb

@@ -10,9 +10,9 @@ namespace _3lab
     {
         public string Title { get; }
 
-        Artist Author;
-        City Storage;
-        int  CreationDate;
+        public Artist Author;
+        public City Storage;
+        public int  CreationDate;
 
         public Masterpiece(string ItsTitle, City StoragePlace)
         {
@@ -26,6 +26,16 @@ namespace _3lab
             Storage = StoragePlace;
             Author = ItsAuthor;
             CreationDate = DateOfCreation;
+        }
+
+        public string GetCreationPlace()
+        {
+            return Storage.CityName;
+        }
+
+        public string GetAuthor()
+        {
+            return Author.Name;
         }
     }
 }

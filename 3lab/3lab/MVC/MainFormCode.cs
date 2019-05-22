@@ -27,6 +27,12 @@ namespace _3lab
                 comboBox2.Items.Add(Name);
         }
 
+        public void AddPieceName(string Name)
+        {
+            if (!comboBox1.Items.Contains(Name))
+                comboBox1.Items.Add(Name);
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             ArgStr Type = new ArgStr("", "p", "Ім'я нового міста", "Напишіть назву міста, що бажаєте заснувати", "");
@@ -65,6 +71,11 @@ namespace _3lab
             ArgInt Year = new ArgInt(1000, "p", "Дата створення", "Рік, у який було сворено цей шедевр", "");
             OkCancelDlg it = new OkCancelDlg("Створення шедевру", null, Type, CreationPlace, Author,Year);
             DialogResult rc = it.ShowDialog();
+            if (!MyCont.CitiesArr.ToList().Contains(CreationPlace)||!MyCont.AuthorsArr.ToList().Contains(Author))
+            {
+                textBox1.Text += "Such town or author doesnt exist" + Environment.NewLine;
+                return;
+            }
             if (rc == DialogResult.OK)
             {
                 MyCont.CreationOfMasterpiece(Type, CreationPlace, Author,Year);
@@ -90,6 +101,37 @@ namespace _3lab
             {
                 comboBox4.Items.Add((Target.Item1 as List<string>)[i]);
             }
+        }
+
+        private void comboBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (!comboBox2.Items.Contains(comboBox2.Text))
+            {
+                comboBox2.Text = "";
+                return;
+            }
+            Tuple<List<string>, string, int> Target = MyCont.GetAuthorInf(comboBox2.Text);
+            comboBox7.Items.Clear();
+            textBox3.Text = "" + Target.Item3;
+            textBox6.Text = "" + Target.Item2;
+            for (int i = 0; i < (Target.Item1 as List<string>).Count; i++)
+            {
+                comboBox7.Items.Add((Target.Item1 as List<string>)[i]);
+            }
+        }
+
+        private void comboBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (!comboBox1.Items.Contains(comboBox1.Text))
+            {
+                comboBox1.Text = "";
+                return;
+            }
+            Tuple<string, string, int> Target = MyCont.GetPieceInf(comboBox1.Text);
+            comboBox7.Items.Clear();
+            textBox5.Text = "" + Target.Item1;
+            textBox7.Text = "" + Target.Item2;
+            textBox4.Text = "" + Target.Item3;
         }
 
         public void ShowMessage(string MessageToShow)
