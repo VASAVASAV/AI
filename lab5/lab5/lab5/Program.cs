@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace lab5
 {
@@ -14,7 +15,7 @@ namespace lab5
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false); // ususal shit
-            MainForm Program = new MainForm();
+            FormDesigner Program = new FormDesigner();
             Application.Run(Program); //creating and running our form is way to initialize all programm.
         }
     }

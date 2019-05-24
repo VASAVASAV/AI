@@ -1,0 +1,9 @@
+F:\work\AI\lab5\lab5\lab5\bin\Debug\lab5.exe.config
+F:\work\AI\lab5\lab5\lab5\bin\Debug\lab5.exe
+F:\work\AI\lab5\lab5\lab5\bin\Debug\lab5.pdb
+F:\work\AI\lab5\lab5\lab5\obj\Debug\lab5.csprojAssemblyReference.cache
+F:\work\AI\lab5\lab5\lab5\obj\Debug\lab5.FormDesigner.resources
+F:\work\AI\lab5\lab5\lab5\obj\Debug\lab5.csproj.GenerateResource.cache
+F:\work\AI\lab5\lab5\lab5\obj\Debug\lab5.csproj.CoreCompileInputs.cache
+F:\work\AI\lab5\lab5\lab5\obj\Debug\lab5.exe
+F:\work\AI\lab5\lab5\lab5\obj\Debug\lab5.pdb
