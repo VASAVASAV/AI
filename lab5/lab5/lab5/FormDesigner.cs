@@ -14,6 +14,7 @@ namespace lab5
     {
         public bool Istaught = false;
         public double[,] W;
+        DataGridView[] Arr;
 
         public FormDesigner()
         {
@@ -22,7 +23,7 @@ namespace lab5
             int NumOfShapes;
             NumOfShapes = Convert.ToInt32(textBox1.Text);
             tabControl2.TabPages.Clear();
-            DataGridView[] Arr = new DataGridView[NumOfShapes];
+            Arr = new DataGridView[NumOfShapes];
             /////////////////
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
@@ -142,6 +143,7 @@ namespace lab5
             int NumOfShapes;
             NumOfShapes = Convert.ToInt32(textBox1.Text);
             tabControl2.TabPages.Clear();
+            Arr = new DataGridView[NumOfShapes];
             /////////////////
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
@@ -181,6 +183,7 @@ namespace lab5
                 }
                 Temp.Height = 300;
                 Temp.Width = 375;
+                Arr[i] = Temp;
                 TempPage.Controls.Add(Temp);
                 TempPage.Text = "Образ номер " + (i + 1);
                 tabControl2.TabPages.Add(TempPage);
@@ -190,6 +193,43 @@ namespace lab5
         private void button1_Click(object sender, EventArgs e)
         {
             Istaught = true;
+            int NumOfShapes;
+            NumOfShapes = Convert.ToInt32(textBox1.Text);
+            double[,] Input = new double[100, NumOfShapes];
+            int i, j, k;
+            for (i = 0; i < NumOfShapes; i++)
+            {
+                for (j = 0; j < 10; j++)
+                {
+                    for (k = 0; k < 10; k++)
+                    {
+                        Input[j * 10 + k, i] = (Arr[i].Rows[j].Cells[k].Style.BackColor == Color.Black) ? (1) : (-1);
+                    }
+                }
+            }
+            W = new double[100, 100];
+            double Temp;
+            for (j = 0; j < 100; j++)
+            {
+                for (k = 0; k < 100; k++)
+                {
+                    Temp = 0;
+                    for (i = 0; i < NumOfShapes; i++)
+                    {
+                        Temp += Input[j, i] * Input[k, i];
+                    }
+                    Temp /= 100;
+                    W[j, k] = Temp;
+                }
+            }
+            for (j = 0; j < 100; j++)
+            {
+                for (k = 0; k < 100; k++)
+                {
+                    if(W[i,j]!=0)
+                        Console.WriteLine("" + j + " " + k + " " + W[j,k]);
+                }
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
